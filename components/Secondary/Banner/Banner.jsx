@@ -8,6 +8,7 @@ export default function Banner() {
                 src='https://links.papareact.com/0fm'
                 layout='fill'
                 objectFit='cover'
+                objectPosition=""
             />
             <div className='absolute top-1/2 w-full text-center'>
                 <p className='text-sm sm:text-lg' >
