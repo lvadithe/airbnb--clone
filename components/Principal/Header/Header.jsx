@@ -14,7 +14,7 @@ import { useRouter } from 'next/dist/client/router';
 
 
 
-export default function Header() {
+export default function Header({ placeholder }) {
   const [searchInput, setSearchInput] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -34,7 +34,7 @@ export default function Header() {
     router.push({
       pathname: '/search',
       query: {
-        loaction: searchInput,
+        location: searchInput,
         startDate: startDate.toISOString(),
         endDate: endDate.toISOString(),
         noOfGuests,
@@ -70,7 +70,7 @@ export default function Header() {
           className='flex-grow pl-5 bg-transparent outline-none text-sm 
         text-gray-600 placeholder-gray-400'
           type="text"
-          placeholder='Start you search' />
+          placeholder={placeholder || 'Start you search'} />
         <SearchIcon className='hidden md:inline-flex h-8 bg-red-400 
         text-white rounded-full p-2 cursor-pointer md:mx-2' />
       </div>
